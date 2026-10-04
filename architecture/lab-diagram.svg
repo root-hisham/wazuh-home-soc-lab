@@ -1,0 +1,59 @@
+<svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="900" height="480" fill="#0d1117"/>
+
+  <!-- Title -->
+  <text x="450" y="38" text-anchor="middle" fill="#e6edf3" font-size="22" font-weight="bold">Home SOC Lab - Network Architecture</text>
+  <text x="450" y="60" text-anchor="middle" fill="#8b949e" font-size="13">VirtualBox NAT Network &quot;soc-lab&quot; (10.0.3.0/24)</text>
+
+  <!-- Host boundary -->
+  <rect x="40" y="90" width="820" height="340" rx="14" fill="none" stroke="#30363d" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="60" y="115" fill="#8b949e" font-size="13">Windows Host (VirtualBox)</text>
+
+  <!-- soc-lab network bar -->
+  <rect x="80" y="220" width="740" height="18" rx="9" fill="#1f6feb" opacity="0.25"/>
+  <text x="450" y="233" text-anchor="middle" fill="#58a6ff" font-size="12">soc-lab NAT Network  10.0.3.0/24</text>
+
+  <!-- Kali -->
+  <g>
+    <rect x="100" y="140" width="190" height="70" rx="10" fill="#161b22" stroke="#f85149" stroke-width="2"/>
+    <text x="195" y="165" text-anchor="middle" fill="#f85149" font-size="15" font-weight="bold">Kali Linux</text>
+    <text x="195" y="184" text-anchor="middle" fill="#c9d1d9" font-size="12">Attacker</text>
+    <text x="195" y="200" text-anchor="middle" fill="#8b949e" font-size="11">10.0.3.4</text>
+  </g>
+
+  <!-- Wazuh server -->
+  <g>
+    <rect x="355" y="260" width="190" height="90" rx="10" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+    <text x="450" y="286" text-anchor="middle" fill="#3fb950" font-size="15" font-weight="bold">wazuh-server</text>
+    <text x="450" y="304" text-anchor="middle" fill="#c9d1d9" font-size="12">Wazuh 4.14.8 (all-in-one)</text>
+    <text x="450" y="320" text-anchor="middle" fill="#c9d1d9" font-size="11">manager + indexer + dashboard</text>
+    <text x="450" y="338" text-anchor="middle" fill="#8b949e" font-size="11">10.0.3.8</text>
+  </g>
+
+  <!-- ubuntu1 -->
+  <g>
+    <rect x="610" y="140" width="190" height="70" rx="10" fill="#161b22" stroke="#d29922" stroke-width="2"/>
+    <text x="705" y="165" text-anchor="middle" fill="#d29922" font-size="15" font-weight="bold">ubuntu1</text>
+    <text x="705" y="184" text-anchor="middle" fill="#c9d1d9" font-size="12">Monitored endpoint + agent</text>
+    <text x="705" y="200" text-anchor="middle" fill="#8b949e" font-size="11">10.0.3.7</text>
+  </g>
+
+  <!-- connecting lines -->
+  <line x1="195" y1="210" x2="195" y2="229" stroke="#f85149" stroke-width="2"/>
+  <line x1="195" y1="229" x2="420" y2="260" stroke="#f85149" stroke-width="2"/>
+  <line x1="705" y1="210" x2="705" y2="229" stroke="#d29922" stroke-width="2"/>
+  <line x1="705" y1="229" x2="480" y2="260" stroke="#d29922" stroke-width="2"/>
+
+  <!-- labels on lines -->
+  <text x="300" y="248" fill="#f85149" font-size="11">attacks (Nmap, Hydra)</text>
+  <text x="560" y="248" fill="#d29922" font-size="11" text-anchor="end">logs via agent</text>
+
+  <!-- host browser -->
+  <g>
+    <rect x="355" y="380" width="190" height="60" rx="10" fill="#161b22" stroke="#8957e5" stroke-width="2"/>
+    <text x="450" y="405" text-anchor="middle" fill="#8957e5" font-size="14" font-weight="bold">Windows Browser</text>
+    <text x="450" y="422" text-anchor="middle" fill="#8b949e" font-size="11">127.0.0.1:8443 (port forward)</text>
+  </g>
+  <line x1="450" y1="350" x2="450" y2="380" stroke="#8957e5" stroke-width="2"/>
+  <text x="465" y="368" fill="#8957e5" font-size="11">dashboard access</text>
+</svg>

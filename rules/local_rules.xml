@@ -1,0 +1,16 @@
+<!--
+  Custom Wazuh rule for the home SOC lab.
+  Add this block to /var/ossec/etc/rules/local_rules.xml on the Wazuh server,
+  then test and restart:
+    sudo /var/ossec/bin/wazuh-analysisd -t
+    sudo systemctl restart wazuh-manager
+-->
+<group name="local,custom,ssh,">
+  <rule id="100100" level="14">
+    <if_sid>40112</if_sid>
+    <description>LAB: Possible compromised account - SSH brute force succeeded for $(dstuser) from $(srcip)</description>
+    <mitre>
+      <id>T1110</id>
+    </mitre>
+  </rule>
+</group>
